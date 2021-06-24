@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-api-yien-liu
+spec:
+  type: ClusterIP
+  selector:
+    component: web
+    student: yien-liu
+  ports:
+    - port: 3000
+      targetPort: 3000
