@@ -16,11 +16,36 @@ headers = {
 
 
 
-@app.route("/home")
-def home():
-    return render_template("home.html")
 
-@app.route('/', methods=['GET'])
+@app.route('/',methods=['POST','GET'])
+def home():
+    output = ""
+    if rq.method =='POST':
+        if rq.values['send']=='send':
+            kw_fan = rq.form['modal_KW_Fan']
+            voltage_input = rq.form['modal_VOLTAGE_INPUT']
+            fan_status = rq.form.get("modal_Fan_Status")
+            equipment_status = rq.form['modal_EQUIPMENT_STATUS']
+            payload = json.dumps([
+                {
+                    "KW_FAN": kw_fan,
+                    "STATUS_FAN": fan_status,
+                    "VOLTAGE_INPUT": voltage_input,
+                    "STATUS_EQUIPMENT": equipment_status
+                }
+            ])
+            response = requests.request("POST", AutoML_url, headers=headers, data=payload)
+            output = json.dumps("Temperature_predict: " + str(eval(response.text)[0]))
+
+            # output = f"{ kw_fan}.{ voltage_input } is equal to { fan_status }.{ equipment_status }"
+            return render_template('home2.html',output=output)
+        return render_template('home2.html',output=output)
+
+    return render_template('home2.html',output=output)
+
+
+
+@app.route('/test', methods=['GET'])
 def main():
     return "Hello Advantech!"
 

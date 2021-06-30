@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/13f8a99de0.js" crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+          function sum()
+          {
+             var num1 = document.myform.number1.value;
+             var num2 = document.myform.number2.value;
+             var sum = parseInt(num1) + parseInt(num2);
+             document.getElementById('add').value = sum;
+          }
+        </script>
+
+</head>
+
+<style>
+
+@media (max-width: 1200px) {
+
+h5{
+    font-size: calc(1.225rem + 0.3vw);
+  }
+  
+.display-2 {
+    font-size: calc(1.675rem + 5.1vw);
+  }
+  
+.lead {
+    font-size: calc(1rem + 0.3vw);
+  }
+  
+p{
+    font-size: calc(0.75rem + 0.3vw);
+  }
+}
+
+</style>
+
+<body>
+
+<nav class="navbar navbar-expand-lg bg-info navbar-dark sticky-top">
+  <a class="navbar-brand" href="#">Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+
+  <div class=" collapse navbar-collapse "  id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active mr-1">
+        <a class="nav-link" href="#">Home </a>
+      </li>
+      <li class="nav-item dropdown mr-1 mr-1">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Demo List
+        </a>
+        <ul class="dropdown-menu bg-info border-0 " >
+          <li>
+          <a class="dropdown-item bg-info text-white" href="#">Action</a>
+          </li>
+          <li>
+          <a class="dropdown-item bg-info text-white" href="#">Action</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item mr-1">
+        <a class="nav-link " href="https://www.advantech.tw/" >Advantech</a>
+      </li> 
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+<div class="jumbotron jumbotron-fluid bg-info text-white text-center " > 
+  <h1 class="display-2 mt-5 "> Without container </h1>
+  
+  <p class="lead mt-5">
+  Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo  luctus.
+  </p>
+  <br>
+  <button class="btn btn-outline-light btn-lg pl-5 pr-5  mt-3">Go
+  </button> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-3 mb-3"> 
+      <div class="card" >
+       <img src="https://cdn.pixabay.com/photo/2020/06/26/17/16/daisies-5343423_1280.jpg" class="card-img-top " alt="...">
+        <div class="card-body">
+         <h5 class="card-title">Dashboard</h5>
+         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+         <button class="btn btn-info">Go somewhere</button>
+        </div>
+      </div>
+    </div>
+   
+    <div class="col-md-6 col-lg-3 mb-3 "> 
+      <div class="card" >
+       <img src="https://cdn.pixabay.com/photo/2020/04/20/09/42/seagulls-5067489_1280.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+         <h5 class="card-title">AIFS Demo</h5>
+         <p class="card-text"></p>
+          <div id="output"></div>
+            <p class="output-statement">{{output}}</p>
+          <a href="#_" onclick="$('#modal_signup').modal({'backdrop': 'static'});" class="btn btn-info" data-toggle="modal" data-target="#modal_signup">TRY OUT</a>
+        </div>
+      </div>
+    </div>
+  <br>
+
+    <div class="col-md-6 col-lg-3 mb-3 "> 
+      <div class="card">
+       <img src="https://cdn.pixabay.com/photo/2020/09/07/16/32/fishing-5552310_1280.jpg" class="card-img-top card-fluid" alt="...">
+        <div class="card-body">
+         <h5 class="card-title">Card title</h5>
+         <p class="card-text">Some quick example text to build on the card title      and make up the bulk of the card's content.</p>
+          <button class="btn btn-info ">Go somewhere</button>
+        </div>
+      </div>
+    </div>
+   <br>
+    <div class="col-md-6 col-lg-3 mb-3 "> 
+      <div class="card" >
+       <img src="https://cdn.pixabay.com/photo/2020/08/25/11/11/zebra-5516455_1280.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+         <h5 class="card-title">Card title</h5>
+         <p class="card-text">Some quick example text to build on the card title      and make up the bulk of the card's content.</p>
+          <button class="btn btn-info  ">Go somewhere</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Modal  Popup Form -->
+    <form method="post">
+    <div class="modal fade" id="modal_signup" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <form id="modal_form_signup" novalidate="novalidate">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <i class="fas fa-brain mr-1"></i>AIFS Demo - Device Temperature 
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="modal_KW_Fan">Fan Power(KW)</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-car-battery"></i></span>
+                                    </div>
+                                    <input type="text" id="modal_KW_Fan" name="modal_KW_Fan" pattern="^[0-9]*$" class="form-control" placeholder="Enter Fan KW" required/>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modal_Fan_Status">Fan Status</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-fan"></i></span>
+                                    </div>
+                                    
+                                    <select class="custom-select" id="modal_Fan_Status" name="modal_Fan_Status">
+                                        <option selected>Choose...</option>
+                                        <option value="0">Off</option>
+                                        <option value="1">On</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="modal_VOLTAGE_INPUT">Voltage Input</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-bolt"></i></span>
+                                    </div>
+                                    <input type="text" id="modal_VOLTAGE_INPUT" name="modal_VOLTAGE_INPUT" pattern="^[0-9]*$" class="form-control" placeholder="Enter input voltage" required/>
+                                </div>
+                            </div>  
+                            <div class="form-group">
+                                <label for="modal_EQUIPMENT_STATUS">Equipment Status</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-laptop-code"></i></span>
+                                    </div>
+                                    <select class="custom-select" id="modal_EQUIPMENT_STATUS" name="modal_EQUIPMENT_STATUS">
+                                        <option selected>Choose...</option>
+                                        <option value="0">Off</option>
+                                        <option value="1">On</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>    
+                                                     
+                            
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" >BACK</button>
+                            <button type="reset" class="btn btn-danger" value="Reset">Reset</button>
+                            <button type="submit" class="btn btn-primary" name="send" value="send" data-dismiss="static">SEND</button>
+                            
+                       
+                    </div>
+                </div>
+            </form>
+        </div>
+    </form> 
+
+</body>
+</html>
