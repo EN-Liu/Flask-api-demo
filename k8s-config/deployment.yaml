@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-api-yien-liu
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      component: web
+      student: yien-liu
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: flask-api
+        component: web
+        student: yien-liu
+        track: stable
+    spec:
+      containers:
+        - name: static
+          image: yien0019/flask-api:v0.2
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              cpu: 20m
+              memory: 32Mi
+              ephemeral-storage: 32Mi
+            requests:
+              cpu: 10m
+              memory: 32Mi
